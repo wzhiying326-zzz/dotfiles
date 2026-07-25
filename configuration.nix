@@ -9,4 +9,18 @@
 
   system.primaryUser = "zhi";
   system.stateVersion = 6;
+
+  nix-homebrew = {
+    enable = true;
+    user = "zhi";
+  };
+  homebrew = {
+    enable = true;
+    onActivation.cleanup = "zap";  # remove anything not listed here
+    onActivation.autoUpdate = true;
+    onActivation.extraFlags = [ "--force" ];
+    casks = [
+      "kitty"
+    ];
+  };
 }
