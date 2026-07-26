@@ -8,8 +8,10 @@
   nixpkgs.hostPlatform = "aarch64-darwin"; # use x86_64-darwin for Intel CPU
 
   system.primaryUser = "zhi";
+  users.users.zhi = {
+    home = "/Users/zhi";
+  };
   system.stateVersion = 6;
-
   nix-homebrew = {
     enable = true;
     user = "zhi";
