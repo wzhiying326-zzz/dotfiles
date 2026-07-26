@@ -50,8 +50,6 @@ in
     autosuggestion.enable = true;
     # 命令实时语法高亮：合法命令绿色，非法命令红色
     syntaxHighlighting.enable = true;
-    # 集成 zoxide：自动接管 z 命令（智能 cd）
-    zoxideIntegration = true;
     # 常用 shell 别名
     shellAliases = {
       ".." = "cd ..";            # 快速回到上级目录
