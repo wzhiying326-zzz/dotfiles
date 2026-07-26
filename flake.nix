@@ -5,6 +5,31 @@
   # ============================================================
   description = "wzy's mac-dotfiles ";
 
+  # ============================================================
+  # nixConfig：全局生效的 Nix 配置（注入到 nix-darwin 和 home-manager）
+  # 这里配置二进制缓存（substituter），让 Nix 优先从中国镜像下载预编译产物
+  # ============================================================
+  nixConfig = {
+    # 二进制缓存镜像列表（按优先级排列，前面的优先）
+    # - SJTUG（上交）：唯一镜像 nix-darwin binary cache 的镜像站，优先级最高
+    # - TUNA / USTC / BFSU：三家均同步 nixpkgs binary cache，互为备份
+    # - cache.nixos.org / nix-community.cachix.org：官方兜底
+    extra-substituters = [
+      "https://mirror.sjtu.edu.cn/nix-channels/store"
+      "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"
+      "https://mirrors.ustc.edu.cn/nix-channels/store"
+      "https://mirrors.bfsu.edu.cn/nix-channels/store"
+      "https://cache.nixos.org"
+      "https://nix-community.cachix.org"
+    ];
+    # 各 substituter 对应的签名公钥
+    # 高校镜像复用 cache.nixos.org 的公钥，cachix 用自己的公钥
+    extra-trusted-public-keys = [
+      "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
+      "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+    ];
+  };
+
   inputs = {
     # ============================================================
     # inputs：声明本配置依赖的所有外部输入源

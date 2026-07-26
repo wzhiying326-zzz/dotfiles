@@ -41,6 +41,11 @@
     onActivation.autoUpdate = true;
     # 强制执行，绕过部分交互式确认
     onActivation.extraFlags = [ "--force" ];
+    # 通过 Homebrew Formula 安装的命令行工具列表
+    # 适合放命令行工具，保持和 casks 一样的声明式管理风格
+    brews = [
+      "fastfetch"  # 系统信息概览工具，启动时展示硬件/OS 等信息
+    ];
     # 通过 Homebrew Cask 安装的 GUI 应用列表
     casks = [
       "kitty"  # 终端模拟器 kitty

@@ -24,6 +24,7 @@ in
     fzf                  # 模糊查找器（文件、历史、命令等）
     jq                   # 命令行 JSON 处理工具
     zoxide               # 智能 cd：记住常去的目录，`z foo` 跳转
+    uv                   # 极快的 Python 包/项目管理器（pip/pipx/poetry 替代品）
     # ===== 终端/编辑器中渲染图标用的字体 =====
     nerd-fonts.jetbrains-mono
     # ===== yazi 终端文件管理器 =====
