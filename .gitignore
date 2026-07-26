@@ -1,5 +1,2 @@
 # macOS
 .DS_Store
-
-# Home-manager 备份文件（home-manager.backupFileExtension = ".bak"）
-*.bak
