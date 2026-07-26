@@ -44,7 +44,8 @@
     # 通过 Homebrew Formula 安装的命令行工具列表
     # 适合放命令行工具，保持和 casks 一样的声明式管理风格
     brews = [
-      "fastfetch"  # 系统信息概览工具，启动时展示硬件/OS 等信息
+      "fastfetch"        # 系统信息概览工具，启动时展示硬件/OS 等信息
+      "pi-coding-agent"  # pi：终端 AI 编程代理（依赖 Node.js）
     ];
     # 通过 Homebrew Cask 安装的 GUI 应用列表
     casks = [

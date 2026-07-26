@@ -121,6 +121,36 @@ nix flake update             # 更新所有 inputs
 sudo darwin-rebuild switch   # 应用
 ```
 
+### 安装 / 更新 pi 插件
+
+pi 自身由 Homebrew 安装（`configuration.nix` 的 `homebrew.brews`），但**插件不归 Nix 管**——pi 用自己的包管理器。
+
+```bash
+# 安装插件
+pi install npm:<package-name>
+pi install npm:<package-name>@<version>   # 固定版本
+
+# 常用操作
+pi list                                  # 查看已装包
+pi remove npm:<package-name>             # 移除
+pi update                                # 更新所有包 + pi 本体
+pi update --extensions                   # 只更新插件
+pi update --self                         # 只更新 pi 本体
+pi config                                # 启用 / 禁用扩展、skills、prompts、themes
+```
+
+> ⚠️ 第三方 pi 包能执行任意代码（npm README 原话）。**装前必须看源码**。
+
+### 本仓库管理的 pi 插件清单
+
+当前由本 dotfiles 追踪、需要在新机器上手动装的插件：
+
+```bash
+pi install npm:pi-web-access
+```
+
+> ⚠️ `~/.pi/agent/settings.json` 里的 `packages` 字段**不会**触发自动安装——它只用于 `pi update` 时判断"哪些包需要更新"。新机器装插件只能靠上面的命令手动跑。
+
 ### 回滚到上一个配置
 
 ```bash

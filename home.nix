@@ -32,7 +32,7 @@ in
     # ===== yazi 预览/搜索的外部依赖（缺一不可） =====
     # 注：yazi 自身不装这些，只通过 PATH 调子进程
     ffmpeg               # 视频缩略图
-    chafa                # 终端里预览图片
+    # chafa              # 终端里预览图片（已删除：kitty 用内置 Unicode placeholders 协议，不需要 ASCII 兜底）
     p7zip                # 7z / rar 压缩包预览（Nix 包名是 p7zip，不是 7zip）
     poppler-utils        # PDF 预览（pdftoppm）
     resvg                # SVG 矢量图预览
@@ -115,4 +115,15 @@ in
   # ============================================================
   home.file.".config/kitty".source =
     config.lib.file.mkOutOfStoreSymlink "${dotfiles}/home/.config/kitty";
+
+  # ============================================================
+  # pi-coding-agent 全局配置
+  # 与 kitty 同理：真实文件保留在仓库内，
+  # ~/.pi/agent/settings.json 通过符号链接指向，便于 Git 追踪修改
+  # 注意：仅管理 settings.json，不要 symlink 整个 ~/.pi/agent/
+  # ——auth.json 含敏感凭证、sessions/models-store/npm 为运行时产物，
+  #    它们继续由 pi 自身管理，不入库
+  # ============================================================
+  home.file.".pi/agent/settings.json".source =
+    config.lib.file.mkOutOfStoreSymlink "${dotfiles}/home/.pi/agent/settings.json";
 }

@@ -1,0 +1,18 @@
+# macOS
+.DS_Store
+
+# Home-manager 备份文件（home-manager.backupFileExtension = ".bak"）
+*.bak
+
+# Nix 构建产物（一般不会进 git，但保险起见）
+result
+result-*
+
+# 切换结果（darwin-rebuild 生成的系统激活脚本等）
+darwin/
+
+# pi-coding-agent 的敏感/运行时产物（仅 settings.json 由 home-manager 管理）
+home/.pi/agent/auth.json
+home/.pi/agent/sessions/
+home/.pi/agent/models-store.json
+home/.pi/agent/npm/
