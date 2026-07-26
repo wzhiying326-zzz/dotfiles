@@ -17,10 +17,10 @@
   nixpkgs.hostPlatform = "aarch64-darwin";
 
   # 默认登录用户
-  system.primaryUser = "zhi";
-  # 用户 zhi 的家目录
-  users.users.zhi = {
-    home = "/Users/zhi";
+  system.primaryUser = "wzy";
+  # 用户 wzy 的家目录
+  users.users.wzy = {
+    home = "/Users/wzy";
   };
   # nix-darwin 的状态版本号，升级时不要随意改动
   system.stateVersion = 6;
@@ -28,8 +28,8 @@
   # 启用 nix-homebrew：以 Nix 方式管理 Homebrew
   nix-homebrew = {
     enable = true;
-    # 由用户 zhi 来安装/管理 brew 包
-    user = "zhi";
+    # 由用户 wzy 来安装/管理 brew 包
+    user = "wzy";
   };
 
   # Homebrew 配置：声明需要安装的 GUI 应用（casks）

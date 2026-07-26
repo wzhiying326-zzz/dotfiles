@@ -73,8 +73,8 @@
             home-manager.useGlobalPkgs = true;
             # 允许 home-manager 管理用户的可执行包（PATH）
             home-manager.useUserPackages = true;
-            # 为用户 zhi 加载 ./home.nix 中的用户级配置
-            home-manager.users.zhi = import ./home.nix;
+            # 为用户 wzy 加载 ./home.nix 中的用户级配置
+            home-manager.users.wzy = import ./home.nix;
             # 覆盖同名文件时备份为 .bak，防止误覆盖
             home-manager.backupFileExtension = ".bak";
           }

@@ -11,8 +11,8 @@ in
   # 管理命令行工具、shell、终端等用户层面的环境
   # ============================================================
 
-  home.username = "zhi";
-  home.homeDirectory = "/Users/zhi";
+  home.username = "wzy";
+  home.homeDirectory = "/Users/wzy";
   # home-manager 状态版本，不要随意修改
   home.stateVersion = "24.11";
 
@@ -32,7 +32,6 @@ in
     # ===== yazi 预览/搜索的外部依赖（缺一不可） =====
     # 注：yazi 自身不装这些，只通过 PATH 调子进程
     ffmpeg               # 视频缩略图
-    # chafa              # 终端里预览图片（已删除：kitty 用内置 Unicode placeholders 协议，不需要 ASCII 兜底）
     p7zip                # 7z / rar 压缩包预览（Nix 包名是 p7zip，不是 7zip）
     poppler-utils        # PDF 预览（pdftoppm）
     resvg                # SVG 矢量图预览
