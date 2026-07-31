@@ -15,7 +15,6 @@
     # - TUNA / USTC / BFSU：三家均同步 nixpkgs binary cache，互为备份
     # - cache.nixos.org / nix-community.cachix.org：官方兜底
     extra-substituters = [
-      "https://mirror.sjtu.edu.cn/nix-channels/store"
       "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"
       "https://mirrors.ustc.edu.cn/nix-channels/store"
       "https://mirrors.bfsu.edu.cn/nix-channels/store"
